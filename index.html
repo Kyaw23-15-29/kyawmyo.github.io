@@ -1,283 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Transformer Location Finder</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-        body {
-            font-family: 'Open Sans', serif;
-			background-color: #3B464C;
-			font-size: 14px;
-        }
-        
-        h2 {
-            padding: 5px
-			text-shadow: 5px 5px 8px #2E2E2E;
-        }
-        
-        .container {
-            background-color: #f2f2f2;
-            width: 600px;
-            height: auto;
-            margin: auto;
-			padding: 7px;
-            border-radius: 0px 30px 0px 30px;
-			border-style: double;
-			border-width: 4px;
-        }
-        
-        .box1 {
-            background-color: #e6e6e6;
-            margin: 20px 20px 20px 20px;
-            padding: 20px;
-            border-radius: 0px 30px 0px 30px;
-            box-shadow: 10px 5px 5px #d1cfcf;
-        }
-        
-        .form {
-            margin: auto;
-        }
-        
-        .box2 {
-            background-color: #e6e6e6;
-            margin: 20px 20px 20px 20px;
-            padding: 10px;
-            border-radius: 0px 30px 0px 30px;
-            box-shadow: 10px 5px 5px #d1cfcf;
-            height: 220px;
-        }
-		
-		input{
-			padding: 5px;
-		}
-		
-		footer{
-			padding:15px;
-			font-size: 12px;
-			text-shadow: 2px 2px 8px #2E2E2E;
-		}
-    </style>
-</head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<body>
-    <div class='container' , align=center>
-        <h2>Transformer Location Finder</h2>
-		<div> 
-			This program is only applicable for the Transfomer that supplied to DTSS2 and C882 LTA projects.
-		</div>
-        <div class='box1'>
-            Enter Transformer Serial No. to find where Transforer is located at which site and suppling to which equipment.
-            </br>
-            </br>
-            <form class='form'>
-                <input id='serialno' type="text" autocomplete= "off" required>
-            </form>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-right">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">iamkyawmyo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Download">Download Books</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  E/E Engineering
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
 
-        <div class='box2'>
-			<h3 id = "header"> <strong>  </strong> </h3>
-            <p id='trfLocation'>
-				<strong> </strong>
-            </p>
-			<p id='trfSupplyTo'>
-				<strong> </strong>
-            </p>
-			<p id='trfPower'>
-				<strong> </strong>
-            </p>
-			<p id='trfVoltage'>
-				<strong> </strong>
-            </p>			
-        </div>
-		
-		<div>
-			<input type='button' name='find' value='Find' onclick="validate()">
-			<input type='button' name='clear' value='Clear' onclick="clearContent()">
-		</div>
-		
-		<div>
-			<footer>This program is written by Kyaw Myo Oo.	</br>
-			Copyright © <a href = "http://www.sgelectrical.com.sg">SG ELECTRICAL </a>
-			</footer>
-		</div>
-    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-    <script>
-		var TRF;
-        var SN = document.getElementById('serialno');
-		var header = document.getElementById('header');
-        var trfLocation = document.getElementById('trfLocation');
-		var trfSupplyTo = document.getElementById('trfSupplyTo');
-		var trfPower = document.getElementById('trfPower');
-		var trfVoltage = document.getElementById('trfVoltage');
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-		// construction function start with Capital letter		
-		function Transformer(location, supplyTo, power, voltage) {
-			this.location = location;
-			this.supplyTo = supplyTo;
-			this.power = power;
-			this.voltage = voltage;
-		}
-
-		// checking whether the serial number exits.
-        function validate() {
-            if (SN.value == '' || SN.value == null) {
-                alert('Enter a serial no.');
-            }else{
-            switch (SN.value) {
-				// FOR C882
-                case '180384':	
-					TRF = new Transformer('C882 TRF1', '22kV Surface RMU1', '3000kVA', '22kV/11kV');
-					display();
-					break;
-					
-				case '180383':	
-					TRF = new Transformer('C882 TRF2', '22kV Surface RMU2', '3000kVA', '22kV/11kV');
-					display();	
-                    break;
-				
-				case '180385':	
-					TRF = new Transformer('C882 TRF3', '2800A LVMSB', '2000kVA', '22kV/415V');
-					display();						
-                    break;
-				
-				// FOR T08 P2
-				case '180639':	
-					TRF= new Transformer('T08 P2 TRF1', '4500A STP AND MAIN LV', '3500kVA', '22kV/415V');
-					display();				
-                    break;
-
-				case '190329':	
-					TRF = new Transformer('T08 P2 TRF2', 'Surface 22kV RMU for TBM', '3000kVA', '22kV/22kV');
-					display();				
-                    break; 
-					
-				// FOR T08 V3
-				case '180641':	
-					TRF = new Transformer('T08 V3 TRF1', '4000A STP & LVMSB', '3000kVA', '22kV/415V');
-					display();				
-                    break;
-					
-				case '190331':	
-					TRF = new Transformer('T08 V3 TRF2', 'Surface 22kV RMU for TBM', '4000kVA', '22kV/22kV-11kV');
-					display();	
-                    break;
-					
-				// T08 ZZi
-				case '180636':	
-					TRF = new Transformer('T08 ZZi TRF1', 'TBM1', '7000kVA', '22kV/22kV');
-					display();
-					break;
-					
-				case '180638':	
-					TRF = new Transformer('T08 ZZi TRF2', '5000A STP Panel', '4000kVA', '22kV/415V');
-					display();	
-					break;
-					
-				case '180637':	
-					TRF = new Transformer('T08 ZZi TRF3', 'TBM2', '4000kVA', '22kV/22kV');				
-					display();
-					break;
-					
-				case '180640':	
-					TRF = new Transformer('T08 ZZi TRF4', '4000A Main LVMSB', '4000kVA', '22kV/415V');
-					display();	
-					break;
-					
-					
-				// T07 LS1
-				case '151917':	
-					TRF = new Transformer('T07 X1-LS1 TRF1', 'Main LVMSB', '2500kVA', '22kV/415V');
-					display();	
-					break;
-					
-				case '152065':	
-					TRF = new Transformer('T07 X1-LS1 TRF2', 'STP Panel', '1600kVA', '22kV/415V');
-					display();
-					break;
-					
-				case '180642':	
-					TRF = new Transformer('T07 X1-LS1 TRF3', 'Surface 11kV RMU for TBM', '4000kVA', '22kV/11kV');
-					display();
-					break;
-					
-				// T07 X1
-				case '190266':	
-					TRF = new Transformer('T07 X1 TRF1', '4000A Main LVMSB', '3500kVA', '22kV/415V');
-					display();	
-					break;
-					
-				case 'KT-14-3111':	
-					TRF = new Transformer('T07 X1 TRF2', '2500A LV BOARD INSIDE CTS0008', '1100kVA', '22kV/415V');
-					display();
-					break;
-					
-				case '190268':	
-					TRF = new Transformer('T07 X1 TRF3', '4000A STP1 PANEL', '2500kVA', '22kV/415V');
-					display();
-					break;	
-					
-				case '190269':	
-					TRF = new Transformer('T07 X1 TRF4', '4000A STP2 PANEL', '2500kVA', '22kV/11kV');
-					display();
-					break;	
-					
-				case '190267':	
-					TRF = new Transformer('T07 X1 TRF5', '2500A, 690V LVMSB', '3500kVA', '22kV/690V');
-					display();
-					break;
-					
-				// T07 LS3
-				case '190332':	
-					TRF = new Transformer('T07 X1-LS3 TRF1', '11kV Surface RMU for TBM', '4000kVA', '22kV/22kV-11kV');
-					display();
-					break;
-					
-				// T10 NLS1
-				case '190271':	
-					TRF = new Transformer('T10 NLS1 TRF1', 'Main LVMSB', '2000kVA', '22kV/415V');
-					display();
-					break;
-					
-				case '190270':	
-					TRF = new Transformer('T10 NLS1 TRF2', 'Surface 22kV RMU for TBM', '2200kVA', '22kV/22KV-11kV');
-					display();
-					break;
-					
-                default:
-                    trfLocation.innerHTML = 'Transformer with serial no.' + SN.value + ' does not exit in project.';
-				}
-            }
-        }
-
-		// to display the transformer information into the HTML P element.
-		const display=()=>{
-			header.innerHTML = "The transformer with serial no." + SN.value + " details are as follow:";					
-         	trfLocation.innerHTML = "Transfomer Location: " + TRF.location;
-			trfSupplyTo.innerHTML = "Serving To: " + TRF.supplyTo;
-			trfPower.innerHTML = "Power: " + TRF.power;
-			trfVoltage.innerHTML = 'Voltage: ' + TRF.voltage;
-		}
-		
-		//Disable browser right click in order to hide the source code.
-		window.oncontextmenu = function () {
-			return false;
-		}
-
-        // function to clear inside P element
-        const clearContent=() => {
-			SN.value = "";
-			header.innerHTML = '';
-            trfLocation.innerHTML = '';
-			trfSupplyTo.innerHTML = '';
-			trfPower.innerHTML = '';
-			trfVoltage.innerHTML = '';
-        }
-    </script>
-</body>
-
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>
